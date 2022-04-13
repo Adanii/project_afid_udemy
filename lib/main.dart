@@ -1,23 +1,27 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:auto_route/auto_route.dart';
 import 'package:course_afid_udemy/pages/home/home.dart';
+import 'package:course_afid_udemy/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  final _router = Routes();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      routeInformationParser: _router.defaultRouteParser(),
+      routerDelegate: _router.delegate(),
     );
   }
 }

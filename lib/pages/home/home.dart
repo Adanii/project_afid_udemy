@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_import, prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:auto_route/auto_route.dart';
 import 'package:course_afid_udemy/pages/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,7 @@ class Home extends StatelessWidget {
           "Aplikasi",
         ),
         leading: GestureDetector(
-          onTap: () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => Dashboard(),
-          )),
+          onTap: () => AutoRouter.of(context).pushNamed("/Dashboard"),
           child: const Icon(Icons.dashboard),
         ),
         actions: [
@@ -53,7 +52,7 @@ class Home extends StatelessWidget {
                   children: [
                     for (int i = 0; i < 10; i++)
                       Text(
-                        "Data",
+                        "Ayu",
                         style: TextStyle(fontSize: 50),
                       ),
                   ],
