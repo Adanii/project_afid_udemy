@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_import, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:auto_route/auto_route.dart';
-import 'package:course_afid_udemy/pages/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -41,19 +40,16 @@ class Home extends StatelessWidget {
           )),
           ListView(
             children: [
-              Container(
-                height: 100,
-                color: Colors.red,
-              ),
+              Container(),
               Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < 50; i++)
                       Text(
-                        "Ayu",
-                        style: TextStyle(fontSize: 50),
+                        "lorem ipsum dit color",
+                        style: TextStyle(fontSize: 25),
                       ),
                   ],
                 ),

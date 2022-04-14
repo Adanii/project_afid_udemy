@@ -15,7 +15,7 @@ import 'package:flutter/material.dart' as _i5;
 
 import '../pages/dashboard/dashboard.dart' as _i3;
 import '../pages/home/home.dart' as _i2;
-import '../pages/login_screen.dart' as _i1;
+import '../pages/login_page/login_screen.dart' as _i1;
 
 class Routes extends _i4.RootStackRouter {
   Routes([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
