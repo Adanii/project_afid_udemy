@@ -123,7 +123,7 @@ class _SignInPageState extends State<SignInPage> {
       padding: EdgeInsets.symmetric(vertical: 20.0),
       width: double.infinity,
       child: RaisedButton(
-        onPressed: () => print('login button pressed'),
+        onPressed: () => AutoRouter.of(context).pushNamed('/Home'),
         padding: EdgeInsets.all(9.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
