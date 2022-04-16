@@ -18,12 +18,18 @@ class Home extends StatelessWidget {
         ),
         leading: GestureDetector(
           onTap: () => AutoRouter.of(context).pushNamed("/Dashboard"),
-          child: const Icon(Icons.dashboard),
+          child: const Icon(
+            Icons.dehaze,
+            size: 25,
+          ),
         ),
         actions: [
           Container(
             padding: const EdgeInsets.only(right: 10),
-            child: const Icon(Icons.search),
+            child: const Icon(
+              Icons.manage_search,
+              size: 30,
+            ),
           ),
         ],
       ),
@@ -45,13 +51,7 @@ class Home extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    for (int i = 0; i < 50; i++)
-                      Text(
-                        "lorem ipsum dit color",
-                        style: TextStyle(fontSize: 25),
-                      ),
-                  ],
+                  children: [],
                 ),
               ),
             ],
