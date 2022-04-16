@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, avoid_print
 
-import 'dart:ffi';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:course_afid_udemy/pages/login_page/widgets/k_style.dart';
 import 'package:flutter/material.dart';

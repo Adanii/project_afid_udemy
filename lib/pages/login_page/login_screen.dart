@@ -5,9 +5,14 @@ import 'package:course_afid_udemy/pages/login_page/widgets/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +38,7 @@ class LoginScreen extends StatelessWidget {
               Column(
                 children: [
                   Icon(
-                    Icons.headphones,
+                    Icons.add_business,
                     color: Colors.white,
                     size: 50,
                   ),
@@ -42,20 +47,17 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "my",
-                        style: GoogleFonts.arizonia(
+                        "MY",
+                        style: GoogleFonts.aclonica(
                           color: Colors.white,
                           fontSize: 30,
                         ),
                       ),
-                      Text(
-                        "App",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      Text("App",
+                          style: GoogleFonts.aclonica(
+                            color: Colors.white,
+                            fontSize: 20,
+                          )),
                     ],
                   ),
                 ],

@@ -9,7 +9,7 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => AutoRouter.of(context).replaceNamed('/Home'),
+      onTap: () => AutoRouter.of(context).pushNamed('/sign-up-page'),
       child: Container(
         height: 35,
         width: 200,
