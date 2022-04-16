@@ -169,6 +169,13 @@ class _SignInPageState extends State<SignInPage> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  offset: Offset(0, 2),
+                  blurRadius: 6.0,
+                )
+              ],
               image: DecorationImage(
                 image: AssetImage(
                   "assets/images/google.jpg",
