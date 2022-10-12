@@ -35,15 +35,15 @@ class Home extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Container(
-              decoration: BoxDecoration(
-            color: Color.fromARGB(255, 178, 180, 180),
-            image: DecorationImage(
-              image: AssetImage("images/pngegg.png"),
-              fit: BoxFit.cover,
-              opacity: 0.1,
-            ),
-          )),
+          // Container(
+          //     decoration: BoxDecoration(
+          //   color: Color.fromARGB(255, 178, 180, 180),
+          //   image: DecorationImage(
+          //     image: AssetImage("images/pngegg.png"),
+          //     fit: BoxFit.cover,
+          //     opacity: 0.1,
+          //   ),
+          // )),
           ListView(
             children: [
               Container(),
