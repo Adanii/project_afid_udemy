@@ -80,8 +80,7 @@ class _SignInPageState extends State<SignInPage> {
     return Container(
       alignment: Alignment.centerRight,
       // ignore: deprecated_member_use
-      child: FlatButton(
-        padding: EdgeInsets.only(right: 0.0),
+      child: FloatingActionButton(
         onPressed: () => print("Forget Button Pressed"),
         child: Text(
           "Forgot Password?",
@@ -120,25 +119,14 @@ class _SignInPageState extends State<SignInPage> {
 
   Widget _buildLoginBtn() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20.0),
       width: double.infinity,
-      child: RaisedButton(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.red,
+        ),
+        child: Text("Sign In"),
         onPressed: () => AutoRouter.of(context).pushNamed('/Home'),
-        padding: EdgeInsets.all(9.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-        color: Colors.white,
-        child: Text(
-          "LOGIN",
-          style: TextStyle(
-            color: Colors.blueGrey,
-            letterSpacing: 1.5,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans',
-          ),
-        ),
       ),
     );
   }
