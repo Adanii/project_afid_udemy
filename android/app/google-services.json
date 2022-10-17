@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "471884226938",
+    "project_id": "my-firebase-1c400",
+    "storage_bucket": "my-firebase-1c400.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471884226938:android:294899cb77bfb068d8b6c3",
+        "android_client_info": {
+          "package_name": "com.flutter_udemy.course_afid_udemy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471884226938-bb73ch07mq1q9k8glftbu9kfu8hekp4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAtaUwtx9oBOuhLjFWdptf-J9w6hPgogs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471884226938-bb73ch07mq1q9k8glftbu9kfu8hekp4r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
