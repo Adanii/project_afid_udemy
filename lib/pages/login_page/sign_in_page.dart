@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, avoid_print
 
 import 'package:auto_route/auto_route.dart';
+import 'package:course_afid_udemy/pages/home/home.dart';
 import 'package:course_afid_udemy/pages/login_page/widgets/k_style.dart';
+import 'package:course_afid_udemy/router/router.gr.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
@@ -11,8 +14,12 @@ class SignInPage extends StatefulWidget {
   State<SignInPage> createState() => _SignInPageState();
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class _SignInPageState extends State<SignInPage> {
   bool _rememberMe = false;
+  final passwordController = TextEditingController();
+  final emailController = TextEditingController();
 
   Widget _buildEmailBox() {
     return Column(
@@ -27,6 +34,7 @@ class _SignInPageState extends State<SignInPage> {
           decoration: kBoxDecorationStyle,
           height: 40.0,
           child: TextField(
+            controller: emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
@@ -58,6 +66,7 @@ class _SignInPageState extends State<SignInPage> {
           decoration: kBoxDecorationStyle,
           height: 40.0,
           child: TextField(
+            controller: passwordController,
             obscureText: true,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
@@ -122,11 +131,11 @@ class _SignInPageState extends State<SignInPage> {
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.white,
-          backgroundColor: Colors.red,
+          primary: Colors.white,
+          onPrimary: Colors.red,
         ),
         child: Text("Sign In"),
-        onPressed: () => AutoRouter.of(context).pushNamed('/Home'),
+        onPressed: signIn,
       ),
     );
   }
@@ -192,6 +201,19 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
+    Scaffold(
+      body: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Home();
+          } else {
+            return SignInPage();
+          }
+        },
+      ),
+    );
+
     return Scaffold(
       body: Stack(
         children: [
@@ -255,5 +277,22 @@ class _SignInPageState extends State<SignInPage> {
         ],
       ),
     );
+  }
+
+  Future signIn() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => Center(child: CircularProgressIndicator()),
+      );
+      AutoRouter.of(context).replaceNamed('/Home');
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
   }
 }
